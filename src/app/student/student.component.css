@@ -1,0 +1,99 @@
+/* Estilo general del contenedor */
+/* Ajuste del contenedor para que sea más amplio */
+.container {
+    max-width: 900px; /* Aumentamos el ancho */
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  /* Encabezado del formulario */
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Estilos del formulario */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  form input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  form button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color: #007bff;
+    cursor: pointer;
+  }
+  
+  form button[type="button"] {
+    background-color: #6c757d;
+  }
+  
+  form button:hover {
+    opacity: 0.9;
+  }
+  
+  /* Estilos de la tabla */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  thead {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  thead th, tbody td {
+    padding: 16px; /* Más espacio en las celdas */
+    text-align: left;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tbody td {
+    padding: 12px;
+  }
+  
+  button {
+    padding: 6px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:nth-child(1) {
+    background-color: #28a745;
+  }
+  
+  button:nth-child(2) {
+    background-color: #dc3545;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  

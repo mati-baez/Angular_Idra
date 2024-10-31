@@ -21,8 +21,10 @@ export class StudentComponent implements OnInit {
   loadStudents(): void {
     this.studentService.getStudents().subscribe((students) => {
       this.students = students;
+      console.log(this.students); // Esto debería mostrar los datos en la consola si se están cargando
     });
   }
+  
 
   // Seleccionar un estudiante para editar
   selectStudent(student: Student): void {
