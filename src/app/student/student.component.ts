@@ -25,10 +25,10 @@ export class StudentComponent implements OnInit {
     });
   }
   
-
-  // Seleccionar un estudiante para editar
+  // Seleccionar un estudiante para editar y hacer scroll al inicio
   selectStudent(student: Student): void {
     this.selectedStudent = { ...student };
+    this.scrollToTop(); // Llamamos al método para hacer scroll al inicio
   }
 
   // Crear un nuevo estudiante
@@ -79,5 +79,10 @@ export class StudentComponent implements OnInit {
       this.selectedStudent.email.trim() !== '' &&
       this.selectedStudent.address.trim() !== ''
     );
+  }
+
+  // Método para desplazarse al inicio de la página
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
