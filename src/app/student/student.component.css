@@ -42,11 +42,10 @@ form table tr td input {
 
 /* Aumenta el tamaño de las etiquetas */
 form table label {
-  font-size: 22px; /* Ajusta el tamaño según prefieras */
-  font-weight: bold; /* Opcional: para hacerlas más destacadas */
+  font-size: 22px; 
+  font-weight: bold; 
   text-align: right;
 }
-
 
 /* Centra los botones dentro de la celda */
 .button-cell {
@@ -65,7 +64,6 @@ form button {
 
 form button[type="submit"] {
   background-color: #8e15d4;
-  
 }
 
 form button[type="button"] {
@@ -85,7 +83,8 @@ thead {
   color: white;
 }
 
-thead th, tbody td {
+thead th,
+tbody td {
   padding: 12px;
   text-align: left;
 }

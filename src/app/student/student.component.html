@@ -1,7 +1,6 @@
 <div class="container">
   <h1>STUDENT MANAGEMENT</h1>
 
-  <!-- Formulario en formato de tabla -->
   <form (ngSubmit)="selectedStudent.id ? updateStudent() : createStudent()">
     <table>
       <tr>
@@ -54,14 +53,15 @@
       </tr>
       <tr>
         <td colspan="2" class="button-cell">
-          <button type="submit">{{ selectedStudent.id ? 'Update' : 'Add' }} Student</button>
+          <button type="submit">
+            {{ selectedStudent.id ? "Update" : "Add" }} Student
+          </button>
           <button type="button" (click)="resetSelectedStudent()">Clear</button>
         </td>
       </tr>
     </table>
   </form>
 
-  <!-- Tabla para mostrar la lista de estudiantes -->
   <table>
     <thead>
       <tr>

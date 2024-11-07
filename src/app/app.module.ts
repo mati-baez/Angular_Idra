@@ -10,18 +10,15 @@ import { StudentComponent } from './student/student.component';
 import { StudentService } from './service/student.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    StudentComponent
-  ],
+  declarations: [AppComponent, StudentComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [StudentService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

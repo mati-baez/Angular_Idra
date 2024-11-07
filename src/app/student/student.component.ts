@@ -5,12 +5,12 @@ import { Student } from './student.model';
 @Component({
   selector: 'app-student',
   templateUrl: './student.component.html',
-  styleUrls: ['./student.component.css']
+  styleUrls: ['./student.component.css'],
 })
 export class StudentComponent implements OnInit {
   students: Student[] = [];
   selectedStudent: Student = this.initializeStudent(); // Inicializamos `selectedStudent` usando una función
-  
+
   constructor(private studentService: StudentService) {}
 
   ngOnInit(): void {
@@ -21,36 +21,42 @@ export class StudentComponent implements OnInit {
   loadStudents(): void {
     this.studentService.getStudents().subscribe((students) => {
       this.students = students;
-      console.log(this.students); // Esto debería mostrar los datos en la consola si se están cargando
+      console.log(this.students);
     });
   }
-  
+
   // Seleccionar un estudiante para editar y hacer scroll al inicio
   selectStudent(student: Student): void {
     this.selectedStudent = { ...student };
-    this.scrollToTop(); // Llamamos al método para hacer scroll al inicio
+    this.scrollToTop(); 
   }
 
   // Crear un nuevo estudiante
   createStudent(): void {
-    if (this.isFormValid()) { // Validación del formulario
-      this.studentService.createStudent(this.selectedStudent).subscribe((student) => {
-        this.students.push(student);
-        this.resetSelectedStudent();
-      });
+    if (this.isFormValid()) {
+      this.studentService
+        .createStudent(this.selectedStudent)
+        .subscribe((student) => {
+          this.students.push(student);
+          this.resetSelectedStudent();
+        });
     }
   }
 
   // Actualizar un estudiante existente
   updateStudent(): void {
-    if (this.selectedStudent && this.isFormValid()) { // Validación adicional
-      this.studentService.updateStudent(this.selectedStudent.id, this.selectedStudent).subscribe((updatedStudent) => {
-        const index = this.students.findIndex((s) => s.id === updatedStudent.id);
-        if (index !== -1) {
-          this.students[index] = updatedStudent;
-        }
-        this.resetSelectedStudent();
-      });
+    if (this.selectedStudent && this.isFormValid()) {
+      this.studentService
+        .updateStudent(this.selectedStudent.id, this.selectedStudent)
+        .subscribe((updatedStudent) => {
+          const index = this.students.findIndex(
+            (s) => s.id === updatedStudent.id
+          );
+          if (index !== -1) {
+            this.students[index] = updatedStudent;
+          }
+          this.resetSelectedStudent();
+        });
     }
   }
 
@@ -71,7 +77,7 @@ export class StudentComponent implements OnInit {
     this.selectedStudent = this.initializeStudent();
   }
 
-  // Validación del formulario para asegurar que todos los campos estén completos
+  // Validacion del formulario para asegurar que todos los campos estén completos
   private isFormValid(): boolean {
     return (
       this.selectedStudent.firstName.trim() !== '' &&

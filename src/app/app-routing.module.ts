@@ -4,11 +4,11 @@ import { StudentComponent } from './student/student.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/students', pathMatch: 'full' },
-  { path: 'students', component: StudentComponent }
+  { path: 'students', component: StudentComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
