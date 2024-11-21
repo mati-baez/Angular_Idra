@@ -2,14 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-
-interface Student {
-  id: number;
-  firstName: string;
-  lastName: string;
-  email: string;
-  address: string;
-}
+import { Student } from '../models/student.model';
 
 @Injectable({
   providedIn: 'root',
